@@ -1,0 +1,4 @@
+UPDATE [dbo].[DOLL_shop]
+   SET [star] = (SELECT ISNULL(AVG([b].[star]), 0)
+				FROM  [DOLL_evaluation] [b]
+				WHERE [DOLL_shop].[address_no] = [b].[address_no])

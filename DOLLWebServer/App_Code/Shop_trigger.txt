@@ -1,0 +1,16 @@
+USE [DOLL]
+GO
+/****** Object:  Trigger [dbo].[Shop_Action]    Script Date: 2017/11/7 下午 01:25:10 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+ALTER TRIGGER [dbo].[Shop_Action] ON [dbo].[DOLL_shop]     -- 建立 Trigger，觸發程序名稱 Tr_Account_changed 作用在資料表 Account
+FOR UPDATE                       -- 動作 Update 都觸發，另外 FOR 可以換成 AFTER 是當正常的資料庫異動完後才處理此 Trigger
+AS
+UPDATE DOLL_shop
+	SET modify_datetime = GETDATE()
+FROM inserted
+WHERE inserted.address_no = DOLL_shop.address_no

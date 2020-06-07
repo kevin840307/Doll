@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/general_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+    <ProgressBar
+        android:id="@+id/pro_load"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="false">
+        <WebView
+            android:id="@+id/web_map_view"
+            android:layout_marginBottom="75dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </WebView>
+        <LinearLayout
+            android:gravity="bottom"
+            android:layout_marginBottom="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <Button
+                android:textColor="@color/white"
+                android:text="重新定位"
+                android:id="@+id/btn_gps_find"
+                android:background="@drawable/orange_button2"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <Button
+                android:textColor="@color/white"
+                android:text="我的位置"
+                android:id="@+id/btn_gps_me"
+                android:background="@drawable/green_button2"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <Button
+                android:textColor="@color/white"
+                android:text="離開"
+                android:id="@+id/btn_gps_back"
+                android:background="@drawable/red_button2"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            ads:adSize="SMART_BANNER"
+            ads:adUnitId="@string/advertising_key"></com.google.android.gms.ads.AdView>
+
+    </RelativeLayout>
+
+</LinearLayout>

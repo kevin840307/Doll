@@ -1,0 +1,3 @@
+APP_ABI := all              #任何CPU都可使用
+APP_STL := stlport_static   #...
+APP_CPPFLAGS += -std=c++11  #支援C++增加C++11

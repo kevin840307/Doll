@@ -1,0 +1,38 @@
+[
+    {
+        "merged": "D:\\Android\\AndroidStudioProjects\\doll\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\crown.png",
+        "source": "D:\\Android\\AndroidStudioProjects\\doll\\app\\src\\main\\res\\drawable-v21\\crown.png"
+    },
+    {
+        "merged": "D:\\Android\\AndroidStudioProjects\\doll\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\line_style1.xml",
+        "source": "D:\\Android\\AndroidStudioProjects\\doll\\app\\src\\main\\res\\drawable-v21\\line_style1.xml"
+    },
+    {
+        "merged": "D:\\Android\\AndroidStudioProjects\\doll\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_action_bar_item_background_material.xml",
+        "source": "D:\\Android\\AndroidStudioProjects\\doll\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable-v21\\abc_action_bar_item_background_material.xml"
+    },
+    {
+        "merged": "D:\\Android\\AndroidStudioProjects\\doll\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\blue_button.xml",
+        "source": "D:\\Android\\AndroidStudioProjects\\doll\\app\\src\\main\\res\\drawable-v21\\blue_button.xml"
+    },
+    {
+        "merged": "D:\\Android\\AndroidStudioProjects\\doll\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ic_cloud_download.xml",
+        "source": "D:\\Android\\AndroidStudioProjects\\doll\\app\\src\\main\\res\\drawable-v21\\ic_cloud_download.xml"
+    },
+    {
+        "merged": "D:\\Android\\AndroidStudioProjects\\doll\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_btn_colored_material.xml",
+        "source": "D:\\Android\\AndroidStudioProjects\\doll\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable-v21\\abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "D:\\Android\\AndroidStudioProjects\\doll\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_edit_text_material.xml",
+        "source": "D:\\Android\\AndroidStudioProjects\\doll\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable-v21\\abc_edit_text_material.xml"
+    },
+    {
+        "merged": "D:\\Android\\AndroidStudioProjects\\doll\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\side_nav_bar.xml",
+        "source": "D:\\Android\\AndroidStudioProjects\\doll\\app\\src\\main\\res\\drawable-v21\\side_nav_bar.xml"
+    },
+    {
+        "merged": "D:\\Android\\AndroidStudioProjects\\doll\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\spir_gray.xml",
+        "source": "D:\\Android\\AndroidStudioProjects\\doll\\app\\src\\main\\res\\drawable-v21\\spir_gray.xml"
+    }
+]

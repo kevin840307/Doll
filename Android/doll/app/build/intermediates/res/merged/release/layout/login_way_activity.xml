@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/general_title"></include>
+<ImageView
+    android:layout_gravity="center"
+    android:background="@drawable/logo"
+    android:layout_marginTop="20dp"
+    android:layout_width="200dp"
+    android:layout_height="200dp" />
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="false">
+
+        <LinearLayout
+            android:gravity="bottom"
+            android:layout_marginBottom="52dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <Button
+                android:text="訪客登入"
+                android:textSize="20dp"
+                android:id="@+id/btn_way_visitors"
+                android:textColor="@color/white"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/blue_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <Button
+                android:text="帳號登入"
+                android:textSize="20dp"
+                android:id="@+id/btn_way_login"
+                android:textColor="@color/white"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/red_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:text="註冊"
+                android:textSize="20dp"
+                android:id="@+id/btn_way_register"
+                android:textColor="@color/white"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/orange_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            ads:adSize="SMART_BANNER"
+            ads:adUnitId="@string/advertising_key"></com.google.android.gms.ads.AdView>
+
+    </RelativeLayout>
+
+</LinearLayout>

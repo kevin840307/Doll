@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/general_title"></include>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:gravity="left"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageButton
+                android:layout_gravity="center"
+                android:id="@+id/ibtn_last_data"
+                android:background="@drawable/ic_chevron_left_50dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginRight="50dp"
+            android:layout_marginLeft="50dp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/img_show_image"
+            android:src="@drawable/ic_cloud_download"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:gravity="right"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageButton
+                android:id="@+id/ibtn_next_data"
+                android:layout_gravity="center"
+                android:background="@drawable/ic_keyboard_arrow_right_50dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="popular">
+        <item>台中</item>
+        <item>台中2</item>
+        <item>台中3</item>
+        <item>台中4</item>
+
+    </string-array>
+</resources>

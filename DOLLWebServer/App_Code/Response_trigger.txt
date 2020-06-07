@@ -1,0 +1,40 @@
+USE [DOLL]
+GO
+
+/****** Object:  Trigger [dbo].[Response_Action]    Script Date: 2017/11/4 下午 08:13:19 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TRIGGER [dbo].[Response_Action] ON [dbo].[DOLL_response]     -- 建立 Trigger，觸發程序名稱 Tr_Account_changed 作用在資料表 Account
+AFTER INSERT,DELETE                         -- 動作 Update、Insert、Delete 都觸發，另外 FOR 可以換成 AFTER 是當正常的資料庫異動完後才處理此 Trigger
+AS
+ ----------------------------------------------------------異動Theme筆數------START-----------------------------------------------------------------
+IF EXISTS (select 1 from inserted) and NOT EXISTS (select 1 from deleted)    -- 判斷新增
+BEGIN
+UPDATE DOLL_theme
+	SET [response_count] = [response_count] + 1
+	FROM inserted
+	WHERE inserted.[plate_id] = DOLL_theme.[plate_id]
+		AND inserted.[theme_id] = DOLL_theme.[theme_id]
+END
+ELSE IF NOT EXISTS (select 1 from inserted) and EXISTS (select 1 from deleted) -- 判斷刪除
+UPDATE DOLL_theme
+	SET [response_count] = [response_count] - 1
+	FROM deleted
+	WHERE deleted.[plate_id] = DOLL_theme.[plate_id]
+		AND deleted.[theme_id] = DOLL_theme.[theme_id]
+ ----------------------------------------------------------異動Theme筆數------END-----------------------------------------------------------------
+
+-- inserted 代表 insert 的資料 或 update 「後」的資料
+-- deleted 代表 delete 的資料 或 update 「前」的資料
+-- inserted 和 deleted  都有資料表示為 UPDATE ，可以使用 IF EXISTS (select 1 from inserted) and EXISTS (select 1 from deleted)  來判斷
+
+GO
+
+ALTER TABLE [dbo].[DOLL_response] ENABLE TRIGGER [Response_Action]
+GO
+
+

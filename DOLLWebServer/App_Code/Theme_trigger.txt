@@ -1,0 +1,19 @@
+USE DOLL   -- 使用資料表 test
+GO
+CREATE TRIGGER Theme_Action ON DOLL_theme     -- 建立 Trigger，觸發程序名稱 Tr_Account_changed 作用在資料表 Account
+AFTER INSERT                         -- 動作 Update、Insert、Delete 都觸發，另外 FOR 可以換成 AFTER 是當正常的資料庫異動完後才處理此 Trigger
+AS
+DECLARE @i_count As int
+SET @i_count = (select COUNT(inserted.plate_id) from inserted) 
+IF @i_count > 0 and NOT EXISTS (select 1 from deleted)                          -- 判斷 Account 資料表中的 password 欄位有異動時
+BEGIN
+	UPDATE [DOLL_code]
+	SET [data] = CAST([data] AS int) + @i_count
+	FROM inserted
+	WHERE [code_kind] = '1'
+		AND [code] = inserted.[plate_id]
+END
+-- inserted 代表 insert 的資料 或 update 「後」的資料
+-- deleted 代表 delete 的資料 或 update 「前」的資料
+-- inserted 和 deleted  都有資料表示為 UPDATE ，可以使用 IF EXISTS (select 1 from inserted) and EXISTS (select 1 from deleted)  來判斷
+

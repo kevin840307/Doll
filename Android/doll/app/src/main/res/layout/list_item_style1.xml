@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:descendantFocusability="blocksDescendants">
+
+    <RelativeLayout
+        android:layout_marginRight="@dimen/activity_vertical_margin"
+        android:layout_marginLeft="@dimen/activity_vertical_margin"
+        android:layout_width="match_parent"
+        android:layout_height="90dp">
+        <ImageView
+            android:layout_marginTop="5dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:id="@+id/img_list_icon"
+            android:src="@drawable/gps_me" />
+        <TextView
+            android:gravity="top"
+            android:textColor="#787878"
+            android:id="@+id/text_list_name"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:text="名稱"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:gravity="top"
+            android:textColor="#8b8b8b"
+            android:id="@+id/text_list_add"
+            android:layout_marginLeft="100dp"
+            android:layout_marginRight="45dp"
+            android:layout_marginTop="40dp"
+            android:textSize="15dp"
+            android:text="地址"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <LinearLayout
+            android:gravity="center|right"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageButton
+                android:focusable="false"
+                android:gravity="center|right"
+                android:id="@+id/ibtn_gps"
+                android:background="@drawable/ic_place_70dp"
+                android:layout_width="45dp"
+                android:layout_height="45dp" />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

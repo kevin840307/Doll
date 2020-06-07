@@ -1,0 +1,41 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "24.0.1"
+
+    defaultConfig {
+        applicationId "com.mndt.ghost.doll"
+        minSdkVersion 15
+        targetSdkVersion 24
+        versionCode 14
+        versionName "1.3.4"
+
+        ndk {
+            moduleName "jniLib"
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+def getLayoutLibPath() {
+    return "${android.getSdkDirectory().getAbsolutePath()}" + "/platforms/" +
+            android.compileSdkVersion + "/data/layoutlib.jar"
+}
+
+dependencies {
+    provided files(getLayoutLibPath())
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:multidex:1.0.0'
+    compile 'com.android.support:appcompat-v7:24.2.1'
+    compile 'com.android.support:design:24.2.1'
+    compile 'com.google.android.gms:play-services:6.+'
+    compile files('libs/ksoap2-android-assembly-3.1.0-jar-with-dependencies.jar')
+}
+

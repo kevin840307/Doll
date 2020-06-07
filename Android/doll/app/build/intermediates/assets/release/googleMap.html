@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+    <title>Google Maps JavaScript API v3 Example: Marker Animations</title>
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <style>
+        html, body {
+            height:100%;
+            margin:0;
+            padding:0;
+        }
+    </style>
+    <script>
+        var centerPoint = new google.maps.LatLng(25.033108, 121.564099);
+        var markerMe;
+        var markerShop;
+        var map;
+        var image_me = 'gps_me.png';
+        var image_shop = 'gps_shop.png';
+
+ function fnMarkMe(lat, log, msg) {
+            var location = new google.maps.LatLng(lat, log);
+            if (markerMe != null) {
+                markerMe.setMap(null);
+            }
+            markerMe = new google.maps.Marker({
+                map: map,
+                draggable: false,
+                position: location,
+                icon: image_me
+            });
+
+            (function (markerMe) {
+                var sHtml = "";
+                sHtml += " <div style='border-radius: 5px; border: solid #D3D3D3 1.2px; padding:5px;'> "
+                sHtml += "  <div style='text-align:center;'> "
+                sHtml += "      <img src='gps_me.png' /> "
+                sHtml += "  </div> "
+                sHtml += "  <div style='text-align:left; color:#696969;'> "
+                sHtml += msg
+                sHtml += "  </div> "
+                sHtml += " </div> "
+                google.maps.event.addListener(markerMe, 'click', function () {
+                    infowindow = new google.maps.InfoWindow({ content: sHtml });
+                    infowindow.open(map, markerMe);
+
+
+                });
+            })(markerMe);
+
+        }
+
+        function fnMarkShop(lat, log, msg) {
+            var location = new google.maps.LatLng(lat, log);
+            markerShop = new google.maps.Marker({
+                map: map,
+                draggable: false,
+                position: location,
+                icon: image_shop
+            });
+
+            (function (markerShop) {
+                var sHtml = "";
+                sHtml += " <div style='border-radius: 5px; border: solid #D3D3D3 1.2px; padding:5px;'> "
+                sHtml += "  <div style='text-align:center;'> "
+                sHtml += "      <img src='gps_shop.png' /> "
+                sHtml += "  </div> "
+                sHtml += "  <div style='text-align:left; color:#696969;'> "
+                sHtml += msg
+                sHtml += "  </div> "
+                sHtml += "  <div style='text-align:center;'> "
+                sHtml += "      <a href='?Lat" + lat + "Log" + log + "'>打開導航</a>"
+                sHtml += "  </div> "
+                sHtml += " </div> "
+                google.maps.event.addListener(markerShop, 'click', function () {
+                    infowindow = new google.maps.InfoWindow({ content: sHtml });
+                    infowindow.open(map, markerShop);
+                });
+            })(markerShop);
+
+        }
+        function initialize() {
+            var mapOptions = {
+                zoom: 15,
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                center: centerPoint
+            };
+
+            map = new google.maps.Map(document.getElementById('map_canvas'),
+                    mapOptions);
+            fnMarkMe(25.033108, 121.564099, '系統預設位置</br>經度:25.033108</br>緯度:121.564099');
+        }
+
+        function fnMoveAt(lat, lon) {
+            myLatlng = new google.maps.LatLng(lat, lon);
+            map.panTo(myLatlng);
+        }
+
+    </script>
+</head>
+<body onload="initialize()">
+    <div id="map_canvas" style="width: device-width; height: 100%;"></div>
+</body>
+</html>

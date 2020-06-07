@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/general_title"></include>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="false">
+
+
+        <LinearLayout
+            android:layout_marginBottom="52dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="vertical">
+            <Button
+                android:text="閒聊區"
+                android:textSize="15dp"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/white"
+                android:id="@+id/btn_forum_two"
+                android:background="@drawable/red_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:text="娃娃機台出租"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                android:layout_marginBottom="10dp"
+                android:id="@+id/btn_forum_one"
+                android:background="@drawable/blue_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <Button
+                android:text="夾物交易區"
+                android:textSize="15dp"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/white"
+                android:id="@+id/btn_forum_three"
+                android:background="@drawable/green_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <Button
+                android:text="問題回報區"
+                android:textSize="15dp"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/white"
+                android:id="@+id/btn_forum_four"
+                android:background="@drawable/orange_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:text="夾點分享區"
+                android:textSize="15dp"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/white"
+                android:id="@+id/btn_forum_five"
+                android:background="@drawable/black_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            ads:adSize="SMART_BANNER"
+            ads:adUnitId="@string/advertising_key"></com.google.android.gms.ads.AdView>
+
+    </RelativeLayout>
+
+</LinearLayout>

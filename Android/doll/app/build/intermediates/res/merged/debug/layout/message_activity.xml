@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:background="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="聊天室"/>
+        <LinearLayout
+            android:layout_marginRight="5dp"
+            android:gravity="right"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <Button
+                android:background="@color/black"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:text="離開"
+                android:id="@+id/btn_messge_leave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+
+        <ListView
+            android:listSelector="@android:color/transparent"
+            android:divider="@null"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="65dp"
+            android:id="@+id/lv_message_data"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </ListView>
+
+
+    <LinearLayout
+        android:gravity="bottom"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:background="@color/gray2"
+            android:gravity="bottom"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+            <EditText
+                android:id="@+id/edit_msg_massege"
+                android:background="@drawable/spir_gray"
+                android:gravity="top"
+                android:scrollbars="vertical"
+                android:singleLine="false"
+                android:paddingTop="5dp"
+                android:paddingLeft="10dp"
+                android:hint="輸入訊息"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+            </LinearLayout>
+            <Button
+                android:layout_marginLeft="5dp"
+                android:id="@+id/btn_msg_send"
+                android:text="發送"
+                android:textColor="@color/white"
+                android:textSize="16dp"
+                android:background="@drawable/blue_button"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
